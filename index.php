@@ -21,7 +21,7 @@ $sql = "SELECT  *  FROM ontime_players ORDER BY playtime DESC LIMIT 10"; // Chan
 $result = $conn->query($sql);
 
 if ($result->num_rows > 0) {
-    // output data of each row
+    // output the data to tables from each row
     echo "<body><center><table cellspacing='0'><thead><tr><th>Player Name</th><th>Total Time</th></tr></thead><tbody><tr>";
     while($row = $result->fetch_assoc()) {
        echo "<td><img src='https://minotar.net/bust/".$row["playerName"]."/30.png' /> ".$row["playerName"]."</td><td>".gmdate("j \d\a\y\s H:i:s", $row["playtime"] / 1000 )."</td></tr></body>";
